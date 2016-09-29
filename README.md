@@ -1,2 +1,2 @@
-# Magento
+# Magento Plugin
 Magento
