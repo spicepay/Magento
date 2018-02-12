@@ -1,0 +1,11 @@
+<h2><?php echo $this->__('Please wait while you are redirected to Spicepay Payment Gateway!') ?></h2>
+<p></p>
+<form id="spicepaypaymentmethod" name="spicepaypaymentmethod" method="post" action="<?php echo Mage::helper('spicepaypaymentmethod')->getPaymentGatewayUrl(); ?>">
+    <input type="hidden" name="amountUSD" id="amountUSD" value="<?php echo $data['grandTotal']; ?>" />                                    
+    <input type="hidden" name="orderId" value="<?php echo $data['orderId']; ?>"/>    
+	<input type="hidden" name="siteId" value="<?php echo $data['siteId']; ?>"/>
+    <input type="hidden" name="language" value="en"/>
+</form>
+<script>
+	document.getElementById("spicepaypaymentmethod").submit();
+</script>

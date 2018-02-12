@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Spicepay_Spicepaypaymentmethod>
+      <version>1.0.0.0</version>
+    </Spicepay_Spicepaypaymentmethod>
+  </modules>
+ 
+  <global>
+     
+    <helpers>
+      <spicepaypaymentmethod>
+        <class>Spicepay_Spicepaypaymentmethod_Helper</class>
+      </spicepaypaymentmethod>
+    </helpers>
+ 
+    <blocks>
+      <spicepaypaymentmethod>
+        <class>Spicepay_Spicepaypaymentmethod_Block</class>
+      </spicepaypaymentmethod>
+    </blocks>
+         
+    <models>
+      <spicepaypaymentmethod>
+        <class>Spicepay_Spicepaypaymentmethod_Model</class>
+      </spicepaypaymentmethod>
+    </models>
+ 
+  </global>
+ 
+  <default>
+    <payment>
+      <spicepaypaymentmethod>
+        <active>1</active>
+        <model>spicepaypaymentmethod/paymentmethod</model>
+        <order_status>pending</order_status>
+        <title>Bitcoin</title>
+        <allowspecific>0</allowspecific>
+        <payment_action>sale</payment_action>
+      </spicepaypaymentmethod>
+    </payment>
+  </default>
+   
+  <frontend>
+    <routers>
+      <spicepaypaymentmethod>
+        <use>standard</use>
+        <args>
+          <module>Spicepay_Spicepaypaymentmethod</module>
+          <frontName>spicepaypaymentmethod</frontName>
+        </args>
+      </spicepaypaymentmethod>
+    </routers>
+  </frontend>
+</config>
