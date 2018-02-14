@@ -5,6 +5,6 @@ class Spicepay_Spicepaypaymentmethod_Helper_Data extends Mage_Core_Helper_Abstra
   function getPaymentGatewayUrl() 
   {
     //return Mage::getUrl('spicepaypaymentmethod/payment/gateway', array('_secure' => false));
-    return 'https://www.spicepay.com/pay.php';
+    return 'https://www.spicepay.com/p.php';
   }
 }
