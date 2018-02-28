@@ -117,6 +117,9 @@ class Spicepay_Spicepaypaymentmethod_PaymentController extends Mage_Core_Control
 					switch($status){
 						case 'paid':						
 							$order->setState(Mage_Sales_Model_Order::STATE_PROCESSING, true, 'Payment Success.');
+							$order->sendNewOrderEmail()->addStatusHistoryComment('You have confirmed the order to the customer via email.')
+            					  ->setIsCustomerNotified(true)
+            					  ->save();
 							break;
 						case 'partiallyPaid':						
 							$order->setState(Mage_Sales_Model_Order::STATE_HOLDED, true, 'Payment Partially Paid.');
