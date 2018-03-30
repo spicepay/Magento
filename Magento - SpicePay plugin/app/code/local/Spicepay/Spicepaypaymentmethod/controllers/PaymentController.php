@@ -112,11 +112,12 @@ class Spicepay_Spicepaypaymentmethod_PaymentController extends Mage_Core_Control
 				Mage::log('IPN('.$this->_getRemoteIP().') IP check ok.', 6, $this->_logFile);
 				
 				$order = Mage::getModel('sales/order')->loadByIncrementId($orderId);
+				$state=Mage::getStoreConfig('payment/spicepaypaymentmethod/order_paid');
 				
 				try{
 					switch($status){
 						case 'paid':						
-							$order->setState(Mage_Sales_Model_Order::STATE_PROCESSING, true, 'Payment Success.');
+							$order->setState($state, true, 'Payment Success.');
 							$order->sendNewOrderEmail()->addStatusHistoryComment('You have confirmed the order to the customer via email.')
             					  ->setIsCustomerNotified(true)
             					  ->save();

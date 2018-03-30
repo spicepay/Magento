@@ -9,10 +9,10 @@
           <show_in_default>1</show_in_default>
           <show_in_website>1</show_in_website>
           <show_in_store>0</show_in_store>
-		  <comment><![CDATA[<a href="https://www.spicepay.com/bitcoin-payment-gateway/" target="_blank">Click here to sign up for an Spicepay merchant account</a><br/><b>Setup Instructions:</b><br><ol><li>Go to <a href="https://www.spicepay.com/tools.php" target="_blank">https://www.spicepay.com/tools.php</a> and click '+ Add site'.</li><li>On the new page fill the 'Merchant (Your) Name'.</li><li>Fill in 'Site URL' the URL of your site.</li><li>Fill in 'Status (Callback) URL' this URL http://your-site.name/spicepaypaymentmethod/payment/ipn/ (replace your-site.name with your site URL)</li><li>Fill in 'Return URL' this URL http://your-site.name/spicepaypaymentmethod/payment/gateway/ (replace your-site.name with your site URL)</li><li>Create a secret code, also copy and paste it into the box below.</li><li>Check 'Enable callback. Send notification 10 times.' box.</li><li>Save the merchant site setup.</li><li>Copy and paste the Site ID into the box below.</li><li>Save the plugin settings in magento.</li></ol>]]></comment>
-					
+      <comment><![CDATA[<a href="https://www.spicepay.com/bitcoin-payment-gateway/" target="_blank">Click here to sign up for an Spicepay merchant account</a><br/><b>Setup Instructions:</b><br><ol><li>Go to <a href="https://www.spicepay.com/tools.php" target="_blank">https://www.spicepay.com/tools.php</a> and click '+ Add site'.</li><li>On the new page fill the 'Merchant (Your) Name'.</li><li>Fill in 'Site URL' the URL of your site.</li><li>Fill in 'Status (Callback) URL' this URL http://your-site.name/spicepaypaymentmethod/payment/ipn/ (replace your-site.name with your site URL)</li><li>Fill in 'Return URL' this URL http://your-site.name/spicepaypaymentmethod/payment/gateway/ (replace your-site.name with your site URL)</li><li>Create a secret code, also copy and paste it into the box below.</li><li>Check 'Enable callback. Send notification 10 times.' box.</li><li>Save the merchant site setup.</li><li>Copy and paste the Site ID into the box below.</li><li>Save the plugin settings in magento.</li></ol>]]></comment>
+          
           <fields>
-			<active translate="label">
+      <active translate="label">
               <label>Enabled</label>
               <frontend_type>select</frontend_type>
               <source_model>adminhtml/system_config_source_yesno</source_model>
@@ -29,22 +29,22 @@
               <show_in_store>0</show_in_store>
               <sort_order>2</sort_order>
             </title>   
-			<site_id translate="label">
-			  <label>Site ID</label>
+      <site_id translate="label">
+        <label>Site ID</label>
               <frontend_type>text</frontend_type>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
               <sort_order>3</sort_order>
-			</site_id>
-			<api_key translate="label">
-			  <label>Secret Code</label>
+      </site_id>
+      <api_key translate="label">
+        <label>Secret Code</label>
               <frontend_type>text</frontend_type>
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
               <sort_order>4</sort_order>
-			</api_key>
+      </api_key>
             <order_status translate="label">
               <label>New order status</label>
               <frontend_type>select</frontend_type>
@@ -54,6 +54,15 @@
               <show_in_store>0</show_in_store>
               <sort_order>5</sort_order>
             </order_status>
+             <order_paid translate="label">
+              <label>Paid order status</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_order_status</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>6</sort_order>
+            </order_paid>           
             <allowspecific translate="label">
               <label>Payment from applicable countries</label>
               <frontend_type>allowspecific</frontend_type>
@@ -61,7 +70,7 @@
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
-              <sort_order>6</sort_order>
+              <sort_order>7</sort_order>
             </allowspecific>
             <specificcountry translate="label">
               <label>Payment from Specific countries</label>
@@ -70,7 +79,7 @@
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
-              <sort_order>7</sort_order>
+              <sort_order>8</sort_order>
             </specificcountry>
           </fields>
         </spicepaypaymentmethod>
